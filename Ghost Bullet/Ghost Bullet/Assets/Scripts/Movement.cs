@@ -27,13 +27,14 @@ public class Movement : MonoBehaviour
 
 
     private bool virou = true;
-    private int facingDirection = 1;
+    //private int facingDirection = 1;
     private bool Grounded;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        Physics2D.IgnoreLayerCollision(9, 10);
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -96,14 +97,14 @@ public class Movement : MonoBehaviour
         if (xAxis > 0 && virou == false)
         {
             transform.Rotate(0, 180, 0);
-            facingDirection = 1;
+            //facingDirection = 1;
             virou = true;
         }
 
         if (xAxis < 0 && virou == true)
         {
             transform.Rotate(0, 180, 0);
-            facingDirection = -1;
+            //facingDirection = -1;
             virou = false;
         }
         
