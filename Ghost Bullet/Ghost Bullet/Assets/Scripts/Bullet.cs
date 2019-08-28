@@ -8,17 +8,20 @@ public class Bullet : MonoBehaviour
     private Rigidbody2D rb;
     private float bulletSpeed = 10f;
 
-    // Start is called before the first frame update
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.right * bulletSpeed;
     }
 
-    // Update is called once per frame
-    void Update()
+    
+    void FixedUpdate()
     {
-        
+        if (rb.velocity.magnitude < (transform.right * bulletSpeed).magnitude || rb.velocity.magnitude > (transform.right * bulletSpeed).magnitude)
+        {
+            rb.velocity = transform.right * bulletSpeed;
+        }
 
     }
 
