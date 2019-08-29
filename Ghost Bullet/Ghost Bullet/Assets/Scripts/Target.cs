@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
+
+    private ParticleSystem p;
+    private SpriteRenderer sprite;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        p = GetComponent<ParticleSystem>();
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -25,7 +30,11 @@ public class Target : MonoBehaviour
     {
         if (col.tag == "Bullet")
         {
-            GameObject.Destroy(gameObject);
+            p.Play();
+            GameManager.instance.ShowPanel();
+            sprite.color = new Color(1f, 1f, 1f, 0f);
+            //gameObject.SetActive(false);
+            //GameObject.Destroy(gameObject);
         }
 
 

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Target
   - Bullet
+  - OutOfBounds
+  - PlayerOutOfBounds
   layers:
   - Default
   - TransparentFX

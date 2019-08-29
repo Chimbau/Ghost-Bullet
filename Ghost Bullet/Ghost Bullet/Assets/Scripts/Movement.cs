@@ -19,6 +19,7 @@ public class Movement : MonoBehaviour
 
     public float checkRadius;
     public Transform groundCheck;
+    public Transform respawnPosition;
     public LayerMask whatIsGround;
 
   
@@ -135,6 +136,16 @@ public class Movement : MonoBehaviour
     public bool isGrounded()
     {
         return Grounded;
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.tag == "PlayerOutOfBounds")
+        {
+            rb.velocity = Vector3.zero;
+            transform.position = respawnPosition.position;
+        }
+
     }
 
   

@@ -8,13 +8,40 @@ public class Bullet : MonoBehaviour
     private Rigidbody2D rb;
     private float bulletSpeed = 10f;
 
+    public float lifeTime;
+    private float lifeTimeValue;
+
+    private int bounceCount = 0;
+    public int maxBounceCount;
     
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.right * bulletSpeed;
+        lifeTimeValue = lifeTime;
+
     }
 
+
+    void Update()
+    {
+        if (lifeTimeValue >= 0)
+        {
+            lifeTimeValue -= Time.deltaTime;
+        }
+        else
+        {
+            DestroyBullet();
+        }
+
+
+        if (bounceCount >= maxBounceCount)
+        {
+            DestroyBullet();
+        }
+
+
+    }
     
     void FixedUpdate()
     {
@@ -28,6 +55,7 @@ public class Bullet : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        bounceCount++;
         Vector2 dir = rb.velocity;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
@@ -40,7 +68,12 @@ public class Bullet : MonoBehaviour
     {
         if (col.tag == "Target")
         {
-            GameObject.Destroy(gameObject);
+            DestroyBullet();
+        }
+
+        if (col.tag == "OutOfBounds")
+        {
+            DestroyBullet();
         }
 
     }
@@ -48,6 +81,13 @@ public class Bullet : MonoBehaviour
     public void SetSpeed(float speed)
     {
         bulletSpeed = speed;
+    }
+
+    public void DestroyBullet()
+    {
+        GameObject.Destroy(gameObject);
+
+
     }
 
 
