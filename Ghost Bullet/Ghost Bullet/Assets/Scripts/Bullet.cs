@@ -61,7 +61,7 @@ public class Bullet : MonoBehaviour
         Vector2 dir = rb.velocity;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-
+        FindObjectOfType<AudioManager>().Play("Collision");
       
     }
 

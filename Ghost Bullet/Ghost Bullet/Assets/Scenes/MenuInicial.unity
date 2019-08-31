@@ -753,3 +753,78 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1716735607
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1716735609}
+  - component: {fileID: 1716735608}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1716735608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716735607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a90e817cf3108c847a0cf926b28e3f93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: ButtonPress
+    volume: 1
+    pitch: 3
+    loop: 0
+    clip: {fileID: 8300000, guid: f2dc03c4dc4dbc145b2f2a43b360a7a8, type: 3}
+    source: {fileID: 0}
+  - name: Shooting
+    volume: 1
+    pitch: 3
+    loop: 0
+    clip: {fileID: 8300000, guid: edeccff479d6fc744a1b0572f3ee35f7, type: 3}
+    source: {fileID: 0}
+  - name: Collision
+    volume: 1
+    pitch: 3
+    loop: 0
+    clip: {fileID: 8300000, guid: 58c4e87b7e725df40bf8341cfbdace43, type: 3}
+    source: {fileID: 0}
+  - name: Starting
+    volume: 1
+    pitch: 3
+    loop: 0
+    clip: {fileID: 8300000, guid: bea008b7e859b3241927566f941d2900, type: 3}
+    source: {fileID: 0}
+  - name: Win
+    volume: 1
+    pitch: 3
+    loop: 0
+    clip: {fileID: 8300000, guid: 3d9bae4e72df1004b8ecec18c9899c84, type: 3}
+    source: {fileID: 0}
+  backMusic: 
+--- !u!4 &1716735609
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716735607}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.9727159, y: 0.43178242, z: -5.285632}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

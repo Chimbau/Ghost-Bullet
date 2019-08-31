@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
         NextPhasePanelAnimator = NextPhasePanel.GetComponent<Animator>();
         NextPhasePanel.SetActive(true);
         NextPhasePanelAnimator.SetBool("NextPhaseAnime", true);
+        FindObjectOfType<AudioManager>().Play("Win");
     }
 
     public void NextScene()
@@ -39,6 +40,7 @@ public class GameManager : MonoBehaviour
 
         if (SceneManager.GetActiveScene().buildIndex < 20)
         {
+            FindObjectOfType<AudioManager>().Play("ButtonPress");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
         

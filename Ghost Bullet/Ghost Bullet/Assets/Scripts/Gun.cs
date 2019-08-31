@@ -32,6 +32,7 @@ public class Gun : MonoBehaviour
             bullet.GetComponent<Bullet>().SetSpeed(bulletSpeed);
             Instantiate(bullet, shootPosition.position, shootPosition.rotation);
             fireRateValue = fireRate;
+            FindObjectOfType<AudioManager>().Play("Shooting");
             
         }
        
