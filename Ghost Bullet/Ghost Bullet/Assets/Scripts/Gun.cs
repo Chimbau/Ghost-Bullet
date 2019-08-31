@@ -7,6 +7,7 @@ public class Gun : MonoBehaviour
 
     public GameObject bullet;
     public Transform gunPosition;
+    public Transform shootPosition;
     public Transform PlayerPosition;
     public float bulletSpeed;  
     public float fireRate;
@@ -29,7 +30,7 @@ public class Gun : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && fireRateValue <= 0)
         {
             bullet.GetComponent<Bullet>().SetSpeed(bulletSpeed);
-            Instantiate(bullet, gunPosition.position, gunPosition.rotation);
+            Instantiate(bullet, shootPosition.position, shootPosition.rotation);
             fireRateValue = fireRate;
             
         }

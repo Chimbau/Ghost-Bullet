@@ -14,7 +14,7 @@ public class Target : MonoBehaviour
     {
         p = GetComponent<ParticleSystem>();
         sprite = GetComponent<SpriteRenderer>();
-        targetCollider = GetComponent<BoxCollider2D>();
+        targetCollider = GetComponent<CircleCollider2D>();
     }
 
     // Update is called once per frame

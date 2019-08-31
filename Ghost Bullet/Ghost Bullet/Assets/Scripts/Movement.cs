@@ -25,7 +25,7 @@ public class Movement : MonoBehaviour
   
     public float airDragMultiplier = 0.05f;
 
-
+    private Animator anime;
 
     private bool virou = true;
     //private int facingDirection = 1;
@@ -37,6 +37,7 @@ public class Movement : MonoBehaviour
     {
         Physics2D.IgnoreLayerCollision(9, 10);
         rb = GetComponent<Rigidbody2D>();
+        anime = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -46,6 +47,17 @@ public class Movement : MonoBehaviour
         PlayerInput();
         HorizontalMovement();
         VerticalMovement();
+
+
+        if (xAxis != 0)
+        {
+            anime.SetBool("walking", true);
+        }
+        else
+        {
+            anime.SetBool("walking", false);
+        }
+            
       
      
     }
