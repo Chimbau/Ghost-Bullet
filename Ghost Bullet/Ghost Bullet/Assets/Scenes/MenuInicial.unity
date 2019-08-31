@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextScene: 
+  pauseMenuUI: {fileID: 0}
 --- !u!114 &39041251
 MonoBehaviour:
   m_ObjectHideFlags: 0
