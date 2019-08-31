@@ -13,6 +13,8 @@ public class Bullet : MonoBehaviour
 
     private int bounceCount = 0;
     public int maxBounceCount;
+
+    public GameObject PlayerExplosion;
     
     void Start()
     {
@@ -74,6 +76,11 @@ public class Bullet : MonoBehaviour
         if (col.tag == "OutOfBounds")
         {
             DestroyBullet();
+        }
+
+        if (col.tag == "Player")
+        {
+
         }
 
     }

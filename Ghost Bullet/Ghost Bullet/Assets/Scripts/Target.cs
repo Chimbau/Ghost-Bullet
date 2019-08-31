@@ -7,12 +7,14 @@ public class Target : MonoBehaviour
 
     private ParticleSystem p;
     private SpriteRenderer sprite;
+    private Collider2D targetCollider;
 
     // Start is called before the first frame update
     void Start()
     {
         p = GetComponent<ParticleSystem>();
         sprite = GetComponent<SpriteRenderer>();
+        targetCollider = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -33,6 +35,7 @@ public class Target : MonoBehaviour
             p.Play();
             GameManager.instance.ShowPanel();
             sprite.color = new Color(1f, 1f, 1f, 0f);
+            targetCollider.enabled = false;
             //gameObject.SetActive(false);
             //GameObject.Destroy(gameObject);
         }
