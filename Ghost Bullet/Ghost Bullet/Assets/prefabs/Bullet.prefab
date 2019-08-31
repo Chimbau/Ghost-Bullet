@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 15
-  maxBounceCount: 5
+  maxBounceCount: 10
   PlayerExplosion: {fileID: 0}
 --- !u!61 &691513391737630933
 BoxCollider2D:
